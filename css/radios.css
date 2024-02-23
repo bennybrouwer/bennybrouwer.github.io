@@ -1,0 +1,15 @@
+.radio-group {
+  background-color: rgb(190, 122, 122);
+}
+
+/* .radio-group input {
+  click: "getRadioValue()"
+} */
+
+#radio-demo {
+  background-color: rgb(187, 134, 134);
+}
+
+#radio-example {
+  text-align: justify;
+}

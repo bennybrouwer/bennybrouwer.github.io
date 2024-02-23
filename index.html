@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>GUI: Controls</title>
+  <link rel="stylesheet"
+        href="css/styles.css">
+  <link rel="stylesheet"
+        href="css/radios.css">
+  <link rel="stylesheet"
+        href="colors/colors.css">
+  <script src="slider.js"
+          defer></script>
+  <script src="radio.js"
+          defer></script>
+  <script src="checkbox.js"
+          defer></script>
+  <script src="events.js"
+          defer></script>
+  <!-- <script type="module"
+                src="/colors/colors.js"></script> -->
+  <!-- <script src="radio.js"
+          defer></script> -->
+  <!-- <script type="module"
+            src="/js/glitch.js"></script> -->
+  <!-- <link rel="stylesheet"
+                  href="css/glitch.css"> -->
+</head>
+
+<body>
+  <header>
+    <h1>GUI: Challenges</h1>
+    <hr>
+    <p>A study of <code>events</code>, <code>checkboxes</code>, <code>sliders</code>, etc. and their
+      use in JavaScript </p>
+    <hr>
+  </header>
+  <!-- ************  Just Events  ***************** -->
+  <h2>Just Practicing Events</h2>
+  <div>
+    <span id="score">0</span>
+    <button id="gameBtn">Click Me</button>
+    <span id="notes"></span>
+  </div>
+  <hr>
+  <!-- ************  Select - Drop Down Menu ***************** -->
+  <h2>Select - Drop Down Menu</h2>
+  <label for="pet-select">Choose a pet:</label>
+  <select name="pets"
+          id="pet-select">
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+    <option value="parrot">Parrot</option>
+    <option value="spider">Spider</option>
+    <option value="goldfish">Goldfish</option>
+  </select>
+  <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">MDN reference</a>
+  </p>
+  <hr>
+  <!-- ************  Range Slider ***************** -->
+  <h2>Range Slider</h2>
+  <p>example:</p>
+  <pre>
+  <code>&#60;input
+    type="range"
+    min="1"
+    max="100"
+    value="50"
+    class="slider range-slider"
+    id="RangeSlider"&#62;
+  </code>
+  </pre>
+  <input type="range"
+         min="1"
+         max="100"
+         value="50"
+         class="slider range-slider"
+         id="RangeSlider">
+  <span id="sliderText">Value</span>
+  <button onclick="valueSender()">Save Value</button>
+  </div>
+  <p>
+    <a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp">w3schools howto</a></br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">mozilla (mdn)
+      howto</a>
+  </p>
+  <!-- ************  Check Boxes ***************** -->
+  <div>
+    <hr>
+    <h2>Check Boxes</h2>
+    <p>example:</p>
+    <pre>
+  <code>&#60;input type="checkbox" id="scales" name="scales" checked&#62;
+  </code>
+  </pre>
+    <fieldset id="#fs1"
+              onclick="getCheckedValues('interest')">
+      <legend>Choose your interests</legend>
+      <div>
+        <input type="checkbox"
+               id="coding"
+               name="interest"
+               value="coding" />
+        <label for="coding">Coding</label>
+      </div>
+      <div>
+        <input type="checkbox"
+               id="music"
+               name="interest"
+               value="music" />
+        <label for="music">Music</label>
+      </div>
+      <div>
+        <input type="checkbox"
+               id="art"
+               name="interest"
+               value="art" />
+        <label for="art">Art</label>
+      </div>
+      <div>
+        <input type="checkbox"
+               id="sports"
+               name="interest"
+               value="sports" />
+        <label for="sports">Sports</label>
+      </div>
+      <div>
+        <input type="checkbox"
+               id="cooking"
+               name="interest"
+               value="cooking" />
+        <label for="cooking">Cooking</label>
+      </div>
+      <div>
+        <input type="checkbox"
+               id="other"
+               name="interest"
+               value="other" />
+        <label for="other">Other</label>
+        <input type="text"
+               id="otherValue"
+               name="other" />
+      </div>
+    </fieldset>
+    <p>
+      <!-- <a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp">w3schools howto</a></br> -->
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">mozilla
+        (mdn) howto</a>
+    </p>
+    <hr>
+  </div>
+  <!-- ************  Radio Buttons  ***************** -->
+  <h2>Radio Buttons</h2>
+  <fieldset class="radio-group"
+            id="radio-demo">
+    <legend>Text Alignment</legend>
+    <div class="group-radio">
+      <input checked
+             type="radio"
+             name="text-alignment"
+             id="text-left"
+             value="left"
+             onclick="getRadioValue()">
+      <label for="text-left">Left</label>
+    </div>
+    <div class="group-radio">
+      <input type="radio"
+             name="text-alignment"
+             id="text-center"
+             value="center"
+             onclick="getRadioValue()">
+      <label for="text-center">Center</label>
+    </div>
+    <div class="group-radio">
+      <input type="radio"
+             name="text-alignment"
+             id="text-right"
+             value="right"
+             onclick="getRadioValue()">
+      <label for="text-right">Right</label>
+    </div>
+    <div class="group-radio">
+      <input type="radio"
+             name="text-alignment"
+             id="text-justify"
+             value="justify"
+             onclick="getRadioValue()">
+      <label for="text-justify">Justify</label>
+    </div>
+    <p id="radio-example">Example</p>
+    <!-- see https://www.youtube.com/watch?v=_jJFiqkb4uY -->
+    <!-- for "Get Selected Radio Button Value On Click using JavaScript" -->
+    <!-- <button onclick="getRadioValue()">Get Radio Value</button> -->
+  </fieldset>
+  <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">mozilla (mdn)
+      howto</a>
+  </p>
+  <hr>
+  <h2>Color switcher</h2>
+  <form id="theme-switcher">
+    <div>
+      <input checked
+             type="radio"
+             id="auto"
+             name="theme"
+             value="auto">
+      <label for="auto">Auto</label>
+    </div>
+    <div>
+      <input type="radio"
+             id="light"
+             name="theme"
+             value="light">
+      <label for="light">Light</label>
+    </div>
+    <div>
+      <input type="radio"
+             id="dark"
+             name="theme"
+             value="dark">
+      <label for="dark">Dark</label>
+    </div>
+    <div>
+      <input type="radio"
+             id="dim"
+             name="theme"
+             value="dim">
+      <label for="dim">Dim</label>
+    </div>
+    <style>
+      #demo {
+        height: 50px;
+        width: 150px;
+        margin-left: 50px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    </style>
+    <input type="radio"
+           id="black"
+           name="theme"
+           value="black">
+    <label for="black">Black</label>
+    <div id="demo"></div>
+    <script>
+      // const doc = document.querySelector('#demo');
+      // const doc = document.firstElementChild;
+      const demo = document.getElementById("black") //.attributes;
+      // const doc = document.html;
+      // console.log(demo);
+
+      demo.addEventListener('input', e =>
+        setColor(e.target.value));
+
+      const setColor = () =>
+        demo.setAttribute('background-color', 'black');
+    </script>
+    </style>
+  </form>
+  <hr>
+</body>
+
+</html>
